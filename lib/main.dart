@@ -1,3 +1,4 @@
+import 'package:e_store/core/app/env.variales.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +10,7 @@ void main()async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await EnvVariables.instance.init(envType: EnvType.dev);
   runApp(const MyApp());
 }
 
